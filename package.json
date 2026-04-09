@@ -8,16 +8,35 @@
   "icon": "media/copilot-tracker.png",
   "private": false,
   "license": "MIT",
-  "repository": {
-    "type": "git",    
-    "url":"https://github.com/Sabarish204/copilot-usage-tracker.git"
+  "homepage": "https://github.com/Sabarish204/copilot-usage-tracker#readme",
+  "bugs": {
+    "url": "https://github.com/Sabarish204/copilot-usage-tracker/issues"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sabarish204/copilot-usage-tracker.git"
+  },
+  "keywords": [
+    "copilot",
+    "github copilot",
+    "prompt tracker",
+    "productivity",
+    "reporting",
+    "excel export",
+    "time tracking",
+    "local storage"
+  ],
   "engines": {
     "vscode": "^1.105.0"
   },
   "categories": [
+    "Visualization",
     "Other"
   ],
+  "galleryBanner": {
+    "color": "#0f766e",
+    "theme": "dark"
+  },
   "activationEvents": [
     "onStartupFinished"
   ],

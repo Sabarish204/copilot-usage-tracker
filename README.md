@@ -1,81 +1,108 @@
 # Copilot Usage Tracker
 
-Local-first Visual Studio Code extension scaffold for tracking GitHub Copilot prompts, planned effort, actual effort, and efficiency.
+Track Copilot-related work inside Visual Studio Code with a simple local-first workflow. Save prompt notes, planned effort, actual effort, and generated reports without sending your data to an external service.
+
+## Why Use It
+
+- Save prompt entries with planned and actual effort
+- Review daily and monthly usage summaries
+- Generate date-range reports in the dashboard
+- Export reports to `.xlsx` and JSON
+- Keep data stored locally in VS Code extension storage
+
+## What It Tracks
+
+This extension tracks prompts that you save through its own dashboard workflow.
+
+It does not read or intercept prompts typed directly into the built-in GitHub Copilot Chat UI. VS Code does not expose that as a stable public API for third-party extensions.
+
+## Features
+
+- Activity Bar entry with a dedicated `Copilot Tracker` view
+- Dashboard with `Save Prompt` and `Report` tabs
+- Sidebar summary for today, this month, and recent prompt history
+- Clipboard fill for quickly pasting prompt text
+- Date-range reporting with totals and efficiency metrics
+- Excel export with a modern `.xlsx` file
+- JSON export for backup or further analysis
+
+## Quick Start
+
+1. Install the extension from the Visual Studio Marketplace.
+2. Open VS Code.
+3. In the Activity Bar, select `Copilot Tracker`.
+4. Open the `Dashboard` view.
+5. In `Save Prompt`, enter:
+   - Prompt text
+   - Planned effort in hours
+   - Actual effort in hours
+6. Select `Save Prompt`.
+7. Open the `Report` tab to generate summaries for a date range.
+8. Select `Export Excel` to create a `.xlsx` report if needed.
+
+## Clipboard Fill
+
+Use `Use Clipboard` when you already copied prompt text from somewhere else.
+
+1. Copy the prompt text.
+2. Open `Copilot Tracker` > `Dashboard` > `Save Prompt`.
+3. Select `Use Clipboard`.
+4. Review the inserted text.
+5. Enter planned and actual effort.
+6. Select `Save Prompt`.
+
+If the clipboard is empty, nothing is inserted.
+
+## Commands
+
+- `Copilot Usage Tracker: Open Dashboard`
+- `Copilot Usage Tracker: Open Getting Started`
+- `Copilot Usage Tracker: Refresh`
+- `Copilot Usage Tracker: Export JSON`
+
+## Data Storage And Privacy
+
+The extension stores data locally in VS Code global storage using a JSON file named `copilot-usage-tracker.json`.
+
+Typical Windows development path:
+
+- `%APPDATA%\Code\User\globalStorage\<publisher>.<extension-name>\copilot-usage-tracker.json`
+
+Nothing in this extension requires a hosted backend for basic tracking and reporting.
 
 ## VS Code Support
 
-**Supported Visual Studio Code versions: `1.105.0` and later.**
+Supported Visual Studio Code versions: `1.105.0` and later.
 
-**This extension is intended to support up to 10 VS Code releases lower than the current project baseline.**
-
-The current project baseline is `1.115.0`, so this plugin is documented and configured to support VS Code `1.105.0+`.
-
-## What this v1 scaffold includes
-
-- Prompt tracking UI inside the extension dashboard
-- Daily and monthly prompt counts
-- Local JSON storage in the extension's global storage directory
-- Sidebar summary and prompt history
-- Dashboard webview with `Save Prompt` and `Report` tabs
-- Date-range summaries and modern `.xlsx` Excel report export
-- Export to JSON
-
-## Important limitation
-
-This scaffold captures prompts that flow through the extension's own tracked entrypoints. It does not intercept prompts typed directly into the built-in GitHub Copilot Chat UI because that is not exposed through a stable public API for third-party extensions.
-
-## Suggested next milestones
-
-1. Add a richer prompt submission flow that hands off to your preferred Copilot workflow.
-2. Replace JSON storage with SQLite if you want stronger query support.
-3. Add prompt redaction and hash-only storage options.
-4. Add charts and CSV export in the reports webview.
-5. Add tests around aggregation and persistence.
-
-## Project structure
+## Project Structure
 
 - `src/extension.ts`: activation and command wiring
 - `src/models.ts`: domain types
-- `src/services/`: storage, tracking, and reporting logic
-- `src/views/`: tree view and reports webview
-- `media/`: extension assets
+- `src/services/`: storage, tracking, report generation, and export logic
+- `src/views/`: sidebar and dashboard webview
+- `media/`: icons and walkthrough assets
 
-## How To Use In VS Code
+## Development
 
-1. Install the `.vsix` and reload VS Code if prompted.
-2. In the left Activity Bar, select the `Copilot Tracker` icon.
-3. Open the `Dashboard` view.
-4. In the `Save Prompt` tab, enter the prompt text, planned effort hours, and actual effort hours.
-5. Select `Save Prompt`.
-6. Switch to the `Report` tab to generate summaries for a date range.
-7. Select `Export Excel` if you want a modern `.xlsx` report file.
+```bash
+npm install
+npm run compile
+```
 
-## How Clipboard Fill Works
+Package the extension locally:
 
-Use the `Use Clipboard` button in the `Save Prompt` tab when you already copied prompt text from somewhere else.
+```bash
+vsce package
+```
 
-1. Copy the prompt text you want to store.
-2. Open `Copilot Tracker` > `Dashboard` > `Save Prompt`.
-3. Select `Use Clipboard`.
-4. The extension reads the current clipboard text and places it into the prompt textbox.
-5. Enter `Planned Effort` and `Actual Effort` manually.
-6. Select `Save Prompt`.
+## Roadmap Ideas
 
-If the clipboard is empty, the prompt box will not be filled.
+1. Add charts to the report dashboard.
+2. Support CSV export alongside Excel and JSON.
+3. Add prompt redaction or hash-only storage options.
+4. Replace JSON storage with SQLite for richer querying.
+5. Add automated tests around aggregation and persistence.
 
-## Where Data Is Stored
+## License
 
-The extension stores prompt data locally in a JSON file named:
-
-- `copilot-usage-tracker.json`
-
-The file is saved under VS Code's extension global storage folder for this extension:
-
-- Windows: `%APPDATA%\Code\User\globalStorage\local-dev.copilot-usage-tracker\copilot-usage-tracker.json`
-- Typical resolved Windows path: `C:\Users\<your-user>\AppData\Roaming\Code\User\globalStorage\local-dev.copilot-usage-tracker\copilot-usage-tracker.json`
-
-This location comes from the extension's `globalStorageUri` and is created automatically when the extension runs.
-
-You can also reopen the built-in onboarding guide from the Command Palette with:
-
-- `Copilot Usage Tracker: Open Getting Started`
+MIT
