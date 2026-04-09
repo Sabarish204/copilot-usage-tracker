@@ -2,7 +2,7 @@
   "name": "copilot-usage-tracker-sabarish",
   "displayName": "Copilot Usage Tracker",
   "description": "Track GitHub Copilot prompts, effort, and efficiency inside Visual Studio Code.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "sabarishkumar",
   "author": "Sabarish Kumar",
   "icon": "media/copilot-tracker.png",
