@@ -1,0 +1,169 @@
+{
+  "name": "copilot-usage-tracker",
+  "displayName": "Copilot Usage Tracker",
+  "description": "Track GitHub Copilot prompts, effort, and efficiency inside Visual Studio Code.",
+  "version": "0.0.1",
+  "publisher": "sabarishkumar",
+  "author": "Sabarish Kumar",
+  "icon": "media/copilot-tracker.png",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/copilot-usage-tracker.git"
+  },
+  "engines": {
+    "vscode": "^1.105.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "copilotUsageTracker.askWithTracking",
+        "title": "Copilot Usage Tracker: Ask With Tracking"
+      },
+      {
+        "command": "copilotUsageTracker.openWalkthrough",
+        "title": "Copilot Usage Tracker: Open Getting Started"
+      },
+      {
+        "command": "copilotUsageTracker.refresh",
+        "title": "Copilot Usage Tracker: Refresh"
+      },
+      {
+        "command": "copilotUsageTracker.openReports",
+        "title": "Copilot Usage Tracker: Open Dashboard"
+      },
+      {
+        "command": "copilotUsageTracker.exportJson",
+        "title": "Copilot Usage Tracker: Export JSON"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "copilotUsageTracker",
+          "title": "Copilot Tracker",
+          "icon": "media/copilot-tracker.svg"
+        }
+      ]
+    },
+    "views": {
+      "copilotUsageTracker": [
+        {
+          "id": "copilotUsageTracker.sidebar",
+          "name": "Usage",
+          "icon": "media/copilot-tracker.svg"
+        },
+        {
+          "id": "copilotUsageTracker.reports",
+          "name": "Dashboard",
+          "type": "webview",
+          "icon": "media/copilot-tracker.svg"
+        }
+      ],
+      "explorer": [
+        {
+          "id": "copilotUsageTracker.sidebar.explorer",
+          "name": "Copilot Usage Tracker",
+          "icon": "media/copilot-tracker.svg"
+        }
+      ]
+    },
+    "walkthroughs": [
+      {
+        "id": "copilotUsageTracker.gettingStarted",
+        "title": "Copilot Usage Tracker",
+        "description": "Learn where to open the extension, how to enter a tracked prompt, and where to view reports inside Visual Studio Code.",
+        "steps": [
+          {
+            "id": "open-activity-bar",
+            "title": "Open the Copilot Tracker view",
+            "description": "Look at the left Activity Bar in VS Code and select **Copilot Tracker**. This opens the extension sidebar where you can see **Today**, **This Month**, and recent tracked prompts.\n\nYou can also open the Command Palette with `Ctrl+Shift+P` and run [Open Getting Started](command:copilotUsageTracker.openWalkthrough).",
+            "media": {
+              "image": "media/walkthrough-open-sidebar.svg",
+              "altText": "Illustration showing the Copilot Tracker icon in the VS Code Activity Bar"
+            }
+          },
+          {
+            "id": "run-tracked-prompt",
+            "title": "Create a tracked prompt",
+            "description": "Open the **Copilot Tracker** container and choose the **Save Prompt** tab in the dashboard. Then enter:\n\n1. Your prompt text\n2. Planned effort in hours\n3. Actual effort in hours\n\nSelect **Save Prompt** and the extension stores everything locally.",
+            "media": {
+              "image": "media/walkthrough-ask-with-tracking.svg",
+              "altText": "Illustration showing the Ask With Tracking command and input boxes"
+            }
+          },
+          {
+            "id": "view-reports",
+            "title": "Generate reports and review usage",
+            "description": "Open the **Report** tab in the dashboard. Choose a **From** date and **To** date, then select **Generate Report** to see total prompts, planned hours, actual hours, and efficiency saved.\n\nUse **Export Excel** to create a modern `.xlsx` report file, or [Copilot Usage Tracker: Export JSON](command:copilotUsageTracker.exportJson) if you want a raw local export.",
+            "media": {
+              "image": "media/walkthrough-reports.svg",
+              "altText": "Illustration showing the Reports view with date range fields and summary metrics"
+            }
+          }
+        ]
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "copilotUsageTracker.refresh",
+          "when": "view == copilotUsageTracker.sidebar",
+          "group": "navigation"
+        },
+        {
+          "command": "copilotUsageTracker.exportJson",
+          "when": "view == copilotUsageTracker.reports",
+          "group": "navigation"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "copilotUsageTracker.openWalkthrough"
+        },
+        {
+          "command": "copilotUsageTracker.openReports"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Copilot Usage Tracker",
+      "properties": {
+        "copilotUsageTracker.storageMode": {
+          "type": "string",
+          "enum": [
+            "json"
+          ],
+          "default": "json",
+          "description": "Local storage backend used by the extension."
+        },
+        "copilotUsageTracker.storePromptText": {
+          "type": "boolean",
+          "default": true,
+          "description": "Store full prompt text locally. If disabled, only prompt metadata is stored."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "tsc --noEmit -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.30",
+    "@types/vscode": "^1.99.0",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  }
+}

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540">
+  <rect width="960" height="540" fill="#f4efe6"/>
+  <rect x="40" y="40" width="880" height="460" rx="18" fill="#fffaf2" stroke="#d8cdb8"/>
+  <rect x="95" y="85" width="770" height="60" rx="12" fill="#263646"/>
+  <text x="120" y="123" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#f7f5ef">&gt; Copilot Usage Tracker: Ask With Tracking</text>
+  <rect x="120" y="180" width="720" height="85" rx="12" fill="#ffffff" stroke="#cdbda5"/>
+  <rect x="120" y="290" width="340" height="70" rx="12" fill="#ffffff" stroke="#cdbda5"/>
+  <rect x="500" y="290" width="340" height="70" rx="12" fill="#ffffff" stroke="#cdbda5"/>
+  <text x="120" y="165" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1d2a38">1. Enter your prompt</text>
+  <text x="145" y="228" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#4f5d6b">Explain this TypeScript error and propose a fix</text>
+  <text x="120" y="278" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1d2a38">2. Planned effort (hours)</text>
+  <text x="500" y="278" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1d2a38">3. Actual effort (hours)</text>
+  <text x="155" y="335" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#4f5d6b">2</text>
+  <text x="535" y="335" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#4f5d6b">1.5</text>
+  <text x="120" y="420" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#1d2a38">The extension stores the prompt locally and computes efficiency automatically.</text>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540">
+  <rect width="960" height="540" fill="#f4efe6"/>
+  <rect x="40" y="40" width="880" height="460" rx="18" fill="#fffaf2" stroke="#d8cdb8"/>
+  <text x="90" y="95" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#1d2a38">Reports View</text>
+  <rect x="90" y="125" width="240" height="56" rx="10" fill="#ffffff" stroke="#cdbda5"/>
+  <rect x="350" y="125" width="240" height="56" rx="10" fill="#ffffff" stroke="#cdbda5"/>
+  <rect x="610" y="125" width="180" height="56" rx="10" fill="#1f4b99"/>
+  <text x="112" y="160" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#4f5d6b">From: 2026-04-01</text>
+  <text x="372" y="160" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#4f5d6b">To: 2026-04-09</text>
+  <text x="640" y="160" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#f7f5ef">Generate</text>
+  <rect x="90" y="215" width="180" height="90" rx="12" fill="#e9dcc6"/>
+  <rect x="290" y="215" width="180" height="90" rx="12" fill="#e9dcc6"/>
+  <rect x="490" y="215" width="180" height="90" rx="12" fill="#e9dcc6"/>
+  <rect x="690" y="215" width="180" height="90" rx="12" fill="#e9dcc6"/>
+  <text x="115" y="248" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1d2a38">Total Prompts</text>
+  <text x="335" y="248" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1d2a38">Planned</text>
+  <text x="535" y="248" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1d2a38">Actual</text>
+  <text x="735" y="248" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1d2a38">Efficiency</text>
+  <text x="155" y="285" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#4f5d6b">18</text>
+  <text x="345" y="285" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#4f5d6b">24 h</text>
+  <text x="545" y="285" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#4f5d6b">21 h</text>
+  <text x="738" y="285" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#4f5d6b">114%</text>
+  <rect x="90" y="335" width="780" height="120" rx="12" fill="#ffffff" stroke="#cdbda5"/>
+  <text x="115" y="375" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1d2a38">Date-wise report table appears here after you choose the range.</text>
+  <text x="115" y="415" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#4f5d6b">Open the Reports view from the Copilot Tracker container to review summaries.</text>
+</svg>
