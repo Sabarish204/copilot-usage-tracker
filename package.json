@@ -1,16 +1,16 @@
 {
-  "name": "copilot-usage-tracker",
+  "name": "copilot-usage-tracker-sabarish",
   "displayName": "Copilot Usage Tracker",
   "description": "Track GitHub Copilot prompts, effort, and efficiency inside Visual Studio Code.",
   "version": "0.0.1",
   "publisher": "sabarishkumar",
   "author": "Sabarish Kumar",
   "icon": "media/copilot-tracker.png",
-  "private": true,
+  "private": false,
   "license": "MIT",
   "repository": {
-    "type": "git",
-    "url": "https://github.com/your-org/copilot-usage-tracker.git"
+    "type": "git",    
+    "url":"https://github.com/Sabarish204/copilot-usage-tracker.git"
   },
   "engines": {
     "vscode": "^1.105.0"
